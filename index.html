@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Fintech Key-Phrase (albert-jin)</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<!--		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">-->
+<!--<script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+<!--https://github.com/albert-jin-->
+				<!-- Header -->
+					<header id="header" class="alt">
+						<span class="logo"><img style="height: 200px;width: 400px" src="images/cow.svg" alt="can't load the image!" /></span>
+						<h1>Fintech Key-Phrase</h1>
+						<p>a Chinese Financial & High-tech Dataset Accelerating the domain-specific Information Retrieval task<br />
+						built by <a href="https://orcid.org/0000-0002-3651-0702">@biaozhao</a> &nbsp; & &nbsp; <a href="https://orcid.org/0000-0002-6656-6061">@weiqiangjin<br />
+								<a href="https://ror.org/017zhmm22">XI'AN JIAO TONG UNIVERSITY</a>,  <a href="http://en.xjtu.edu.cn/">(XJTU)</a>
+								<br /> </a> Github: &nbsp; <a href="https://github.com/albert-jin/Fintech-Key-Phrase">https://github.com/albert-jin/Fintech-Key-Phrase</a>.</p>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="#intro" class="active">Introduction</a></li>
+							<li><a href="#first">Model Prediction</a></li>
+							<li><a href="#second">Application Interface</a></li>
+							<li><a href="#cta">Summary</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+							<section id="intro" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>Fintech Key-Phrase</h2>
+										</header>
+										<p>We propose a new dataset, Chinese Financial & High-tech Dataset (Fintech Key-Phrase) in Information Retrieval, which is derived from the publicly released Chinese Management’s Discussion and Analysis (CMD&A). To the best of our knowledge, together with more than 1.2K human-annotated instances, Fintech Key-Phrase is the largest also reliable Chinese benchmark for the Expression-level Information Extraction task.</p>
+										<span ><img style="height: 628px;width: 1266px" src="images/dataset_screenshot.PNG" alt="" /></span>
+										<header class="major">
+											<h2>DataSet Statistics</h2>
+										</header>
+										<p>The High-tech CMD&A annual reports we collect are total more than 16,600 documents, and the documents have recorded up to 2692 different companies' annual business reports. The high-technology CMD&A documents contains about 11171 words in average, the maximum length and the minimum length in the documents is 115 and 32006, respectively.</p>
+										<p>The below Figure describes the statistics of the document lengths and the document released time in different interval.</p>
+										<span ><img style="height: 465px;width: 830px" src="images/corpus_stats.PNG" alt="" /></span>
+										<header class="major">
+											<h2>Train & Test Set Split</h2>
+										</header>
+										<p>The training set we split contains annotated more than 35,884 Fin-tech domain key-phrases which contains 11,434 different key-phrases after removing duplicated phrases, and the test set contains more than 1769 Fin-tech key-phrases which contains 1,439 different key-phrases after removing duplicated phrases.</p>
+										<p>The Figure below statistics the key-phrases' counts of different length segment intervals.</p>
+										<span ><img style="height: 465px;width: 830px" src="images/phrase_len_stats.PNG" alt="" /></span>
+										<p>From the statistics, we can obviously observe that the majority of Fin-tech domain key-phrases are scattered in the length range from 1 to 6, within a smart part of key-phrases whose length is more than 7. This observation indicate that, generally, the key-phrases in which the financial experts are interested is short and simply.</p>
+										<ul class="actions">
+											<li><a href="intro_details.html" class="button">Learn More</a></li>
+										</ul>
+									</div>
+								</div>
+							</section>
+
+						<!-- First Section -->
+							<section id="first" class="main special">
+								<header class="major">
+									<h2>Real-time Model Prediction</h2>
+								</header>
+								<ul class="features">
+									<li id="li1">
+										<span class="icon solid major style4 fa-code"></span>
+										<h3>BERT-Linear</h3>
+									</li>
+									<li id="li2">
+										<span class="icon major style5 fa-copy"></span>
+										<h3>BERT-CRF</h3>
+									</li>
+									<li id="li3">
+										<span class="icon major style3 fa-gem"></span>
+										<h3>BERT-BiLSTM-CRF</h3>
+									</li>
+									<li id="li4">
+										<span class="icon solid major style1 fa-code"></span>
+										<h3>RoBERTa-Linear</h3>
+									</li>
+									<li id="li5">
+										<span class="icon major style2 fa-copy"></span>
+										<h3>RoBERTa-CRF</h3>
+									</li>
+									<li id="li6">
+										<span class="icon major style6 fa-gem"></span>
+										<h3>RoBERTa-BiLSTM-CRF</h3>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Second Section -->
+							<section id="second" class="main special">
+								<header class="major">
+									<h2>Released Application Programming Interface (API)</h2>
+									<p>.<br />
+									.</p>
+								</header>
+								<p class="content">.</p>
+								<ul class="statistics">
+									<li class="style1">
+										<span class="icon solid fa-code-branch"></span>
+										<strong>10,0 </strong> Max Threading
+									</li>
+									<li class="style2">
+										<span class="icon fa-folder-open"></span>
+										<strong>10,0 GB</strong> Max Capacity
+									</li>
+									<li class="style3">
+										<span class="icon solid fa-signal"></span>
+										<strong>2048,0 KB</strong> Max Bandwidth
+									</li>
+									<li class="style4">
+										<span class="icon solid fa-laptop"></span>
+										<strong>10,0</strong> Max Connections
+									</li>
+									<li class="style5">
+										<span class="icon fa-gem"></span>
+										<strong>498,0</strong> PageView Counts
+									</li>
+								</ul>
+							</section>
+
+						<!-- Get Started -->
+							<section id="cta" class="main special">
+								<header class="major">
+									<h2>Conclusion and Perspective</h2>
+									<p>.</p>
+								</header>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h2>Fintech Key-Phrase</h2>
+							<p>Our proposed Fintech Key-Phrase is a human-annotated Chinese financial and high-technology field related key-phrase dataset, which contains over more than 12K paragraphs together with the annotated domain-specific key-phrases. We hope this dataset can facilitate the scientific research and exploration in the Chinese cross-field of financial and high-technology.</p>
+							<ul class="actions">
+								<li><a href="intro_details.html" class="button">Learn More</a></li>
+								<li><a href="https://github.com/albert-jin" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+						<section>
+							<h2>Authors Info</h2>
+							<dl class="alt">
+								<dt>Affiliation</dt>
+								<dd>School of Information and Communications Engineering</dd>
+								<dt>College</dt>
+								<dd>Xi`an Jiaotong University</dd>
+								<dt>Address</dt>
+								<dd>Innovation Harbor, Xi'an, Shaanxi, China</dd>
+								<dt>Phone</dt>
+								<dd>(+86) 130-4061-7148</dd>
+								<dt>Email</dt>
+								<dd><a href="#">weiqiangjin@stu.xjtu.edu.cn</a></dd>
+								<dt>Postcode</dt>
+								<dd>710049</dd>
+							</dl>
+						</section>
+						<p class="copyright">&copy; Website "Fintech Key-Phrase". &nbsp; &nbsp; Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+<script>
+	$(function (){
+		$('#li1,#li2,#li3,#li4,#li5,#li6').click(function (){
+			window.location.href='model_prediction.html';
+		})
+	})
+</script>
+</html>

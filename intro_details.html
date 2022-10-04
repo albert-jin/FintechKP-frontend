@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Intros of Fintech-Key-Phrase</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Introductions of Fintech-Key-Phrase</h1>
+			<img style="height: 200px;width: 400px" src="images/bear.svg" alt="can't load the image!" />
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<h1>DataSet Construction Motivation</h1>
+								<h2> <b> Research Background</b></h2>
+								<p>With the rapid advent of the science technology and industrialization, 21st century has engaged in the inevitable trend of technological revolutions and economic globalization. The cross-field of financial and high-technology has received a lot of attention from both industries and academic communities in recent decades. As we know, the Chinese high-technology techniques which are accompanied by the booming of financial market develop rapidly, from which we can discover massive valuable development experiences to promote the development of the world-global technology. An intelligent financial analysis system can effectively help the investors to conduct various investment activities (e.g. stock price-forecasting, corporate risk aversion and stock price volatility trace). The solutions about how to efficiently extract the interested information in the cross-domain of financial & high-technology remains an important research direction.</p>
+								<h2> <b> Corpus Deficiency </b> </h2>
+								<p>For the mainstream Neural Network based supervised learning approaches, the sufficient annotated corpora directly influence the NN-based model's final performance. However, since domain-specific information extraction is still in its infancy, there is no available data source in the cross-domain of financial & high-technology. The severe data deficiency has caused the considerable gap of specific domain-related researches.</p>
+								<h2><b>TexSmart</b> Just So So ~</h2>
+								<p>The AI & NLP team of the Internet Technology Corporation <b>TENCENT</b> built <b>TexSmart</b>, a natural language processing & analysis tool, which contains many NLP features such as Fine-grained Named Entity Recognition, semantic expansion, and deep semantic expression for specific type of entities. More details can be accessed from <a href="https://texsmart.qq.com/">the official website</a>.
+
+<b>TexSmart</b> provides online <a href="https://texsmart.qq.com/en">APIs</a> for the open-domain Expression-level Information Retrieval task. But due to its open-domain oriented feature, it might handle poorly in some domain-specific scenarios (financial & High-tech domain). To validate this possible situation, we make a detailed comparison of the Information Retrieval performances between the <b>TexSmart</b> and the financial expert standards. As vividly shown in picture below, based on the extracted results of <b>TexSmart</b> and the financial experts' experience, the <b>TexSmart</b> exist a plenty Missing Item (should be included in the interest keywords) and Redundant Items (should not be included in the interest keywords), which is an obvious discrepancy compared with the experts' ideal annotations. The incorrect identification could affect the downstream NLP tasks such as Document Theme Recognition and Paragraph-Level Reading Comprehension. Thus, it is extremely necessary to develop an Information Retrieval dataset in financial & High-tech domain to generate a better extraction model for the Information Extraction task.</p>
+								<span class="image main" style="width: 857px;height: 482px"><img src="images/texsmart_screenshot.PNG" alt="" /></span>
+								<h1>Construction Procedures</h1>
+								<h2> <b>1. Extraction from CMD&A</b></h2>
+								<p>The <a href="https://www.cnrds.com/Home/index#/FeaturedDatabase/DB/CMDA">Chinese Research Data Services Platform (CNRDS)</a> has recorded a large amount of historical information of most Chinese public companies. From this website, we request the official API and download the Management’s Discussion and Analysis (CMD&A) documents of Chinese financial enterprises from 2008 to 2022 year (14-years span until now). The downloaded corpus contains up to millions of enterprise annual reports.</p>
+								<h2> <b>2. Fintech Domain Filtering</b></h2>
+								<p> The <a href="http://www.csrc.gov.cn/">China Securities Regulatory Commission (CNSRC) </a> has formulated the China National Economic Industry Classification Guidelines, which indicates the pre-defined industrial classification for all Chinese public companies. We utilize these classification guidelines to filter the high-technology related CMD&A documents from the original corpus.</p>
+								<h2> <b>3. Key-Phrase Annotation </b></h2>
+								<p>We formulate several primary labelling schemes as follows to circumscribe the scope of the interested phrases which need to be annotated. Given a set of specific-domain documents, the crowd-sourcing annotators were recruited to mark the target texts following these regulations.</p>
+								<span class="image main" style="width: 857px;height: 453px"><img src="images/rules.PNG" alt="" /></span>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+										<footer id="footer">
+						<section>
+							<h2>Fintech Key-Phrase</h2>
+							<p>Our proposed Fintech Key-Phrase is a human-annotated Chinese financial and high-technology field related key-phrase dataset, which contains over more than 12K paragraphs together with the annotated domain-specific key-phrases. We hope this dataset can facilitate the scientific research and exploration in the Chinese cross-field of financial and high-technology.</p>
+							<ul class="actions">
+								<li><a href="#" class="button">Learn More</a></li>
+								<li><a href="https://github.com/albert-jin" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+						<section>
+							<h2>Authors Info</h2>
+							<dl class="alt">
+								<dt>Affiliation</dt>
+								<dd>School of Information and Communications Engineering</dd>
+								<dt>College</dt>
+								<dd>Xi`an Jiaotong University</dd>
+								<dt>Address</dt>
+								<dd>Innovation Harbor, Xi'an, Shaanxi, China</dd>
+								<dt>Phone</dt>
+								<dd>(+86) 130-4061-7148</dd>
+								<dt>Email</dt>
+								<dd><a href="#">weiqiangjin@stu.xjtu.edu.cn</a></dd>
+								<dt>Postcode</dt>
+								<dd>710049</dd>
+							</dl>
+						</section>
+						<p class="copyright">&copy; Website "Fintech Key-Phrase". &nbsp; &nbsp; Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
