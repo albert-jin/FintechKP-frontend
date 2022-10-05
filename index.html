@@ -49,7 +49,7 @@
 										<header class="major">
 											<h2>Fintech Key-Phrase</h2>
 										</header>
-										<p>We propose a new dataset, Chinese Financial & High-tech Dataset (Fintech Key-Phrase) in Information Retrieval, which is derived from the publicly released Chinese Management’s Discussion and Analysis (CMD&A). To the best of our knowledge, together with more than 1.2K human-annotated instances, Fintech Key-Phrase is the largest also reliable Chinese benchmark for the Expression-level Information Extraction task.</p>
+										<p>We propose a new dataset, Chinese Financial & High-tech Dataset (<b>Fintech Key-Phrase</b>) in Information Retrieval, which is derived from the publicly released Chinese Management’s Discussion and Analysis (CMD&A). To the best of our knowledge, together with more than 1.2K human-annotated instances, <b>Fintech Key-Phrase</b> is the largest also reliable Chinese benchmark for the Expression-level Information Extraction task.</p>
 										<span ><img style="height: 628px;width: 1266px" src="images/dataset_screenshot.PNG" alt="" /></span>
 										<header class="major">
 											<h2>DataSet Statistics</h2>
@@ -108,8 +108,10 @@
 							<section id="second" class="main special">
 								<header class="major">
 									<h2>Released Application Programming Interface (API)</h2>
-									<p>.<br />
-									.</p>
+									<p>Introductions about the released API.</p>
+									<br/>
+										<span ><img style="height: 494px;width: 932px" src="images/api_intros.PNG" alt="" /></span>
+									<p>Hope you enjoy it !</p>
 								</header>
 								<p class="content">.</p>
 								<ul class="statistics">
@@ -140,7 +142,7 @@
 							<section id="cta" class="main special">
 								<header class="major">
 									<h2>Conclusion and Perspective</h2>
-									<p>.</p>
+									<p style="text-align: left">1) We present a new dataset, named Chinese Financial & High-tech Based Key-Phrase (<b>Fintech Key-Phrase</b>), which can be regarded as the newest Expression-level Information Extraction benchmark in the Chinese Financial & High-tech specific domain. <br>2) We conduct comprehensive experiments by utilizing several <b>SOTA</b> approaches (Six Models which are shown in the "<b>Real-time Model Prediction</b>" part). Experiments demonstrate that our dataset can serve as solid baselines for future Information Extraction related researches. <br>3) In this website, we have released the well-trained SOTA models and corresponding APIs for extracting key-phrases in the Chinese Financial & High-tech specific domain. </p>
 								</header>
 							</section>
 
@@ -150,7 +152,7 @@
 					<footer id="footer">
 						<section>
 							<h2>Fintech Key-Phrase</h2>
-							<p>Our proposed Fintech Key-Phrase is a human-annotated Chinese financial and high-technology field related key-phrase dataset, which contains over more than 12K paragraphs together with the annotated domain-specific key-phrases. We hope this dataset can facilitate the scientific research and exploration in the Chinese cross-field of financial and high-technology.</p>
+							<p>Our proposed <b>Fintech Key-Phrase</b> is a human-annotated Chinese financial and high-technology field related key-phrase dataset, which contains over more than 12K paragraphs together with the annotated domain-specific key-phrases. We hope this dataset can facilitate the scientific research and exploration in the Chinese cross-field of financial and high-technology.</p>
 							<ul class="actions">
 								<li><a href="intro_details.html" class="button">Learn More</a></li>
 								<li><a href="https://github.com/albert-jin" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
@@ -173,7 +175,7 @@
 								<dd>710049</dd>
 							</dl>
 						</section>
-						<p class="copyright">&copy; Website "Fintech Key-Phrase". &nbsp; &nbsp; Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						<p class="copyright">&copy; Website "<b>Fintech Key-Phrase</b>". &nbsp; &nbsp; Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 					</footer>
 
 			</div>
@@ -190,8 +192,23 @@
 	</body>
 <script>
 	$(function (){
-		$('#li1,#li2,#li3,#li4,#li5,#li6').click(function (){
-			window.location.href='model_prediction.html';
+		$('#li1').click(function (){
+			window.location.href='model_prediction_bl.html';
+		})
+				$('#li2').click(function (){
+			window.location.href='model_prediction_bc.html';
+		})
+				$('#li3').click(function (){
+			window.location.href='model_prediction_blc.html';
+		})
+				$('#li4').click(function (){
+			window.location.href='model_prediction_rbl.html';
+		})
+				$('#li5').click(function (){
+			window.location.href='model_prediction_rbc.html';
+		})
+				$('#li6').click(function (){
+			window.location.href='model_prediction_rblc.html';
 		})
 	})
 </script>

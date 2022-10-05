@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/button.css" />
+		<link rel="stylesheet" href="assets/css/jquery.toast.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>RoBERTa-Linear</h1>
+						<p>(Chinese Financial & High-tech Domain) Real-time Model Prediction</p>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+						<!-- Content -->
+							<section id="content" class="main">
+								<h2><b>Text Input:</b></h2>
+								<input type="text" id="sent_input">
+								<a class="bilibiliYEAH">Search</a>
+								<br><br>
+								<h2><b>Information Retrieval Results</b></h2>
+								<h3>Tags Prediction:</h3>
+								<textarea readonly="readonly" style="height:300px;overflow:auto" id="tags_output"></textarea>
+								<br>
+								<h3>Predicted Phrases:</h3>
+								<textarea readonly="readonly" style="height:175px;overflow:auto" id="phrases_output"></textarea>
+							</section>
+<span class="image main">
+	<p><b>RoBERTa-Linear</b> Compared with the BERT-Linear, RoBERTa-Linear replaces the Transformer <b>BERT</b> with the enhanced Transformer "A Robustly Optimized BERT" (<b>RoBERTa</b>) to better utilize the absolute superiority of the large-scaled pre-trained language models.</p>
+	<p>Details of the architecture of <b>BERT-Linear</b> are illustrated in the left part of Next Figure.</p>
+	<img style="width: 979px;height: 549px" src="images/all_baselines.PNG" alt="can't load the image!" /></span>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h2>Authors Info</h2>
+							<dl class="alt">
+                                <dt>Authors</dt>
+                                <dd>Zhao Biao & Jin Weiqiang</dd>
+								<dt>Affiliation</dt>
+								<dd>School of Information and Communications Engineering</dd>
+								<dt>College</dt>
+								<dd>Xi`an Jiaotong University</dd>
+								<dt>Address</dt>
+								<dd>Innovation Harbor, Xi'an, Shaanxi, China</dd>
+							</dl>
+						</section>
+                        						<section>
+							<br/><br/>
+							<dl class="alt">
+								<dt>Phone</dt>
+								<dd>(+86) 130-4061-7148</dd>
+								<dt>Email</dt>
+								<dd>weiqiangjin@stu.xjtu.edu.cn</dd>
+								<dt>Postcode</dt>
+								<dd>710049</dd>
+                                <dt>GitHub</dt>
+                                <dd><a href="https://github.com/albert-jin">https://github.com/albert-jin</a></dd>
+							</dl>
+						</section>
+						<p class="copyright">&copy; Website "Fintech Key-Phrase". &nbsp; &nbsp; Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.toast.js"></script>
+		<script src="assets/js/jquery.blockUI.min.js"></script>
+	<script>
+		function getHanziNum(sentence){
+			// /g代表可多次匹配正则
+			let re = /[\u4E00-\u9FA5]/g;
+			let hanziNum = 0;
+			if(sentence.match(re)!=null){
+				hanziNum = sentence.match(re).length;
+			}
+			return hanziNum;
+		}
+
+		$(function (){
+			$('.bilibiliYEAH').click(function (){
+				let input_sent = $('#sent_input').val();
+				if(input_sent.length<8){
+					$.toast({
+						heading: 'Warning',
+						text: 'You Must Type Into More Than 8 Words!',
+						showHideTransition: 'plain',
+						icon: 'warning'
+					});
+					return;
+				}
+				if(getHanziNum(input_sent)<4){
+					$.toast({
+						heading: 'Warning',
+						text: 'You Must Type Into More Than 4 Chinese Characters!',
+						showHideTransition: 'plain',
+						icon: 'warning'
+					});
+				}else {
+					// do request.
+					$.blockUI({ message: "waiting for server response..." });
+					$.ajax({
+						url:"https://31863ew564.zicp.fun/information_retrieval",
+						data: JSON.stringify({sent:[input_sent], model_type:'roberta_linear'}),
+						contentType: "application/json",
+          				type: "post",
+						success: function(result){
+							$.unblockUI();
+			  if(result['status']!=='success'){
+				  $.toast({
+						heading: 'Error',
+						text: result['info'],
+						icon: 'error'
+					});
+				  return;
+			  }
+			  			  $.toast({
+						heading: 'Success',
+						text: 'please see the returned retrieved information.',
+						icon: 'success'
+					});
+			  $("#tags_output").text(result['results'][0]['pred_tags'].join('\t'));
+			  $("#phrases_output").text(result['results'][0]['phrases'].join('\t\t'));
+			  },error:function (){
+                    $.unblockUI();
+					$.toast({
+						heading: 'Error',
+						text: 'Server Error, Please email the author "Weiqiang Jin", Email: weiqiangjin@stu.xjtu.edu.cn',
+						icon: 'error'
+					});
+					},});
+				}
+			})
+		})
+	</script>
+	</body>
+</html>
